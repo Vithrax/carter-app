@@ -2,7 +2,7 @@ import React from "react";
 import { SignIn } from "@clerk/nextjs";
 import { Container } from "@mui/joy";
 
-const LoginPage: React.FC = () => {
+const Login: React.FC = () => {
   return (
     <div className="bg-zinc-100">
       <Container
@@ -20,4 +20,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

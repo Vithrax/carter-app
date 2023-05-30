@@ -1,13 +1,12 @@
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
 import { type AppType } from "next/app";
 import Head from "next/head";
-import { ClerkProvider, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 import "@fontsource/public-sans";
-
-import { api } from "~/utils/api";
 import "~/styles/globals.css";
 
-import LoginPage from "~/components/login-page";
+import { api } from "~/utils/api";
+import HeroPage from "~/components/hero-page";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -22,11 +21,10 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
       <ClerkProvider>
         <SignedIn>
-          <UserButton />
           <Component {...pageProps} />
         </SignedIn>
         <SignedOut>
-          <LoginPage />
+          <HeroPage />
         </SignedOut>
       </ClerkProvider>
     </>
